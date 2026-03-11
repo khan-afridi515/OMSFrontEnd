@@ -3,9 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
-  const handleRoute = () => {
-    window.location.href = "/profile";
-  }
+  // const handleRoute = () => {
+  //   window.location.href = "/profile";
+  // }
 
   // const myData = JSON.parse(localStorage.getItem("data"));
   // console.log("myData", myData);
@@ -65,10 +65,10 @@ const Navbar = () => {
           </NavLink>
 
         </div>
-        <div>
+        <Link to="/profile"><div>
 
-          <img src="/lion.jpg" alt="No image here" className='w-10 h-10 rounded-full' onClick={handleRoute} />
-        </div>
+          <img src="/lion.jpg" alt="No image here" className='w-10 h-10 rounded-full' />
+        </div></Link>
       </div>
     </div>
   )
