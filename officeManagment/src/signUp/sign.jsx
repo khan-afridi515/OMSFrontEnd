@@ -27,14 +27,14 @@ const Sign = () => {
     setPreview(myImg);
   }
 
-  const holeUrl = `${userlocalHost}/api/v0/users/postUser`;
+  // const holeUrl = `${userlocalHost}/api/v0/users/postUser`;
 
-  const formData = new FormData();
-  formData.append("name", name);
-  formData.append("email", email);
-  formData.append("contact", mobile);
-  formData.append("password", password);
-  formData.append("img", img);
+  // const formData = new FormData();
+  // formData.append("name", name);
+  // formData.append("email", email);
+  // formData.append("contact", mobile);
+  // formData.append("password", password);
+  // formData.append("img", img);
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();

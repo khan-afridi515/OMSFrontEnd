@@ -10,7 +10,7 @@ const Log = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const holeUrl = `${userlocalHost}/api/v0/users/loginUser`;
+  // const holeUrl = `${userlocalHost}/api/v0/users/loginUser`;
 
   const myNav = useNavigate();
 
