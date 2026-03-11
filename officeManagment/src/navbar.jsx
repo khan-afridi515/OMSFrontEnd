@@ -7,8 +7,8 @@ const Navbar = () => {
     window.location.href = "/profile";
   }
 
-  const myData = JSON.parse(localStorage.getItem("data"));
-  console.log("myData", myData);
+  // const myData = JSON.parse(localStorage.getItem("data"));
+  // console.log("myData", myData);
 
 
 
@@ -67,7 +67,7 @@ const Navbar = () => {
         </div>
         <div>
 
-          <img src={myData?.img} alt="No image here" className='w-10 h-10 rounded-full' onClick={handleRoute} />
+          <img src="/lion.jpg" alt="No image here" className='w-10 h-10 rounded-full' onClick={handleRoute} />
         </div>
       </div>
     </div>
