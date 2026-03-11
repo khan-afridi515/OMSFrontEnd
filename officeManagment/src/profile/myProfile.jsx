@@ -4,29 +4,6 @@ import React, { useRef, useState } from 'react'
 
 const MyProfile = () => {
 
-  const [show, setShow] = useState(false);
-  const [leaveShow, setleaveShow] = useState(false);
-
-  const myRef = useRef();
-  const cardRef = useRef();
-
-  const showCard = () => {
-    myRef.current.style.display = "block";
-  }
-
-  const leaveCard = () => {
-    cardRef.current.style.display = "block";
-  }
-
-  const hideCard = () => {
-    myRef.current.style.display = "none";
-  }
-
-  const hideLeaveCard = () => {
-    cardRef.current.style.display = "none";
-  }
-  
-
   return (
     <div className='w-full'>
       <div className='relative w-full'>
