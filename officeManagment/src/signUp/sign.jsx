@@ -75,7 +75,7 @@ const Sign = () => {
   return (
     <div>
       <div className='flex justify-center items-center w-full h-[110vh]'>
-      <div className='px-8 py-12 border border-3 rounded-md'>
+      <div className='sm:px-8 px-4 py-12 border border-3 rounded-md'>
         <h1 className='text-2xl font-bold text-black text-center mb-3'>Sign Up</h1>
         <div>
             <form action="" onSubmit={handleSubmit} className='flex flex-col gap-6'>

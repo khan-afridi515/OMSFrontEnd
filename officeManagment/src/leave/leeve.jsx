@@ -30,7 +30,7 @@ const LeaveForm = () => {
     <div className="flex justify-center">
             <form
       onSubmit={submitLeave}
-      className="bg-white p-6 rounded-xl shadow w-[400px] border-black border-3 rounded-md my-20"
+      className="bg-white py-6 sm:px-6 px-4 rounded-xl shadow sm:w-[400px] w-[350px] border-black border-3 rounded-md my-20"
     >
       <h2 className="text-xl font-bold mb-4 text-center">Apply Leave</h2>
 

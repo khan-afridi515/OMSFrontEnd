@@ -58,11 +58,11 @@ const AttendanceHistory = () => {
 
   return (
 
-    <div className="relative flex flex-col gap-6 px-10 py-8">
-      <div className="self-end mr-80">
+    <div className="relative flex flex-col gap-6 sm:px-10 px-3 py-8">
+      <div className="self-end sm:mr-80 mr-0">
         <button className="text-md px-3 py-1 bg-green-500 text-yellow-500 font-bold rounded-md cursor-pointer hover:bg-white hover:border-green-500 hover:border-3 hover:text-green-500 " onClick={showCard}>Attandance</button>
       </div>
-      <div className="w-full max-w-[700px] mx-auto bg-white shadow-xl rounded-2xl p-6 border">
+      <div className="w-full max-w-[700px] mx-auto bg-white shadow-xl rounded-2xl sm:px-6 px-2 py-6 border">
 
 
         <h2 className="text-xl font-bold mb-4 text-center">
