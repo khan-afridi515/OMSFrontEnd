@@ -10,7 +10,7 @@ const Log = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const holeUrl = `${userlocalHost}/api/v0/users/loginUser`;
+  const holeUrl = `${userlocalHost}/api/v0/users/loginUser`;
 
   const myNav = useNavigate();
 
@@ -19,38 +19,32 @@ const Log = () => {
     email: email, 
     password: password
   }
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   console.log(email, password);
-  //   if(!email || !password){
-  //     alert("Please fill all the fields");
-  //     return;
-  //   }
-  //   else{
-  //     axios.post(holeUrl, data)
-  //     .then((res)=>{
-  //       console.log("res", res.data.data.user);
-  //       console.log("token", res.data.data.token);
-  //       localStorage.setItem("data", JSON.stringify(res.data.data.user));
-
-  //       res && alert("User logged in successfully");
-  //     })
-  //     .catch((err)=>{
-  //       console.log("err", err);
-  //     })
-  //   }
-  // }
-
-
   const handleLogin = (e) => {
     e.preventDefault();
+    console.log(email, password);
+    if(!email || !password){
+      alert("Please fill all the fields");
+      return;
+    }
+    else{
+      axios.post(holeUrl, data)
+      .then((res)=>{
+       
+        localStorage.setItem("data", JSON.stringify(res.data.data.user));
+        localStorage.setItem("tokenData", JSON.stringify(res.data.data.token));
+        console.log("res", res.data.data.token);
 
-    setEmail("");
-  setPassword("");
-
-    myNav("/home");
-
+        res && alert("User logged in successfully");
+        res && myNav("/home");
+      })
+      .catch((err)=>{
+        console.log("err", err);
+      })
+    }
   }
+
+
+
 
 
   return (

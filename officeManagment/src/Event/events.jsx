@@ -1,9 +1,38 @@
+import axios from "axios";
 import React from "react";
+import { userlocalHost } from "../localHost";
+
 
 const EventCard = ({ event }) => {
 
-  const register = () => {
-    alert(`Registered for ${event.title}`);
+  // const userToken = JSON.parse(localStorage.getItem("tokenData"));
+
+
+  const register = async (id) => {
+    const userToken = JSON.parse(localStorage.getItem("tokenData"));
+    console.log(userToken)
+    const registeUrl = `${userlocalHost}/api/v2/eventRoute/registerEvnt/${id}`;
+    console.log("tokenData", userToken);
+    axios.post(registeUrl, {}, {
+      headers: {
+        Authorization: `Bearer ${userToken}`
+      }
+    })
+      .then((res) => {
+        console.log("get res", res);
+        res && alert(res.data.msg)
+      })
+      .catch((err) => {
+        console.log("Full error:", err);
+
+        // 🔥 THIS is what you need
+        if (err.response && err.response.data) {
+          alert(err.response.data.msg); // "Already registered for this event"
+        } else {
+          alert("Something went wrong");
+        }
+      });
+
   };
 
   return (
@@ -16,17 +45,17 @@ const EventCard = ({ event }) => {
 
         <div className="flex items-center gap-2 mb-2">
           <i className="fa-solid fa-calendar"></i>
-          <p>{event.date}</p>
+          <p>{event.eventDate}</p>
         </div>
 
         <div className="flex items-center gap-2">
           <i className="fa-solid fa-location-dot"></i>
-          <p>{event.location}</p>
+          <p>{event.place}</p>
         </div>
       </div>
 
       <button
-        onClick={register}
+        onClick={() => register(event._id)}
         className="mt-6 bg-purple-500 hover:bg-yellow-500 text-black font-semibold py-2 rounded-lg transition cursor-pointer"
       >
         Register Event

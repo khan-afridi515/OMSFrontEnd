@@ -6,7 +6,6 @@ import Navbar from '../navbar'
 const SignIn = () => {
   return (
     <div>
-      
       <Sign/>
     </div>
   )

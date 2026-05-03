@@ -27,50 +27,45 @@ const Sign = () => {
     setPreview(myImg);
   }
 
-  // const holeUrl = `${userlocalHost}/api/v0/users/postUser`;
+  const holeUrl = `${userlocalHost}/api/v0/users/postUser`;
 
-  // const formData = new FormData();
-  // formData.append("name", name);
-  // formData.append("email", email);
-  // formData.append("contact", mobile);
-  // formData.append("password", password);
-  // formData.append("img", img);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   if(!name || !email || !mobile || !password || !cPassword){
-  //     alert("Please fill all the fields");
-  //     return;
-  //   }
-  //   else if(password !== cPassword){
-  //     alert("Password and Confirm Password do not match");
-  //   }else{
-  //      axios.post(holeUrl, formData, {
-  //       headers:{
-  //         "Content-Type":"myltipart/form-data"
-  //       }
-  //      })
-  //      .then((res)=>{
-  //       console.log("res", res);
-
-  //       res && alert("User created successfully");
-
-  //       console.log("resData", res.data.user);
-       
-  //      })
-  //   }
-
-  //   console.log("myUrl", holeUrl);
-  //   console.log("data", name, email, mobile, password, cPassword, img);
-
-  // }
-
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("contact", mobile);
+  formData.append("password", password);
+  formData.append("img", img);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if(!name || !email || !mobile || !password || !cPassword){
+      alert("Please fill all the fields");
+      return;
+    }
+    else if(password !== cPassword){
+      alert("Password and Confirm Password do not match");
+    }else{
+       axios.post(holeUrl, formData, {
+        headers:{
+          "Content-Type":"myltipart/form-data"
+        }
+       })
+       .then((res)=>{
+        console.log("res", res);
+
+        res && alert("User created successfully");
+
+        console.log("resData", res.data.user);
+       
+       })
+    }
+
     console.log("myUrl", holeUrl);
+    console.log("data", name, email, mobile, password, cPassword, img);
+
   }
+
 
   return (
     <div>
