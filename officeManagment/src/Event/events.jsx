@@ -5,8 +5,6 @@ import { userlocalHost } from "../localHost";
 
 const EventCard = ({ event }) => {
 
-  // const userToken = JSON.parse(localStorage.getItem("tokenData"));
-
 
   const register = async (id) => {
     const userToken = JSON.parse(localStorage.getItem("tokenData"));
